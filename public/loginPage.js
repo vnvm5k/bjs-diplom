@@ -7,7 +7,7 @@ newUser.loginFormCallback = (data) => ApiConnector.login(data, (response) =>
 		if(response.success) {
 			location.reload();
 		} else {
-			newUser.loginErrorMessageBox();
+			newUser.setLoginErrorMessage(response.error);
 		}
 	});
 
@@ -18,7 +18,7 @@ newUser.registerFormCallback = (data) => ApiConnector.register(data, (response) 
 		if(response.success) {
 			location.reload();
 		} else {
-			newUser.registerErrorMessageBox();
+			newUser.setRegisterErrorMessage(response.error);
 		}
 	});
 
